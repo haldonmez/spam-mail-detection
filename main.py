@@ -36,7 +36,6 @@ with open(csv_file, 'w', newline='') as f:
         text = text.lower()
 
         # Determine the label and label_num
-        # This is just an example, replace with your actual logic
         label = 'ham'
         label_num = 0 if label == 'ham' else 1
 
