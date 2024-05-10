@@ -79,7 +79,7 @@ with open(csv_file_spam, 'w', newline='', encoding='utf-8') as f:
         text = text.lower()
 
         # Determine the label and label_num
-        label = 'ham'
+        label = 'spam'
         label_num = 1 if label == 'spam' else 0
 
         # Write the data to the CSV file
