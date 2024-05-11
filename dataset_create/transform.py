@@ -5,10 +5,10 @@ import string
 import pandas as pd
 
 # Directory containing your txt files
-txt_dir_ham = 'dataset_create\\raw_txt\\combined_enron\\ham'
+txt_dir_ham = 'dataset_create\\raw_txt\\enron6\\ham'
 
 # Directory containing your txt files
-txt_dir_spam = 'dataset_create\\raw_txt\\combined_enron\\spam'
+txt_dir_spam = 'dataset_create\\raw_txt\\enron6\\spam'
 
 # Output CSV file
 csv_file_ham = 'dataset_create\\dataset\\ham.csv'
@@ -99,7 +99,7 @@ df = pd.concat([ham, spam])
 df = df.sample(frac=1).reset_index(drop=True)
 
 # Save the shuffled DataFrame to a new CSV file
-df.to_csv('dataset_create\\dataset\\combined_enron.csv', index=False)
+df.to_csv('dataset_create\\dataset\\enron6.csv', index=False)
 
 os.remove('dataset_create\\dataset\\ham.csv') 
 os.remove('dataset_create\\dataset\\spam.csv')
