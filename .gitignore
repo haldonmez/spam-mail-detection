@@ -1,2 +1,4 @@
 *.csv
 *.txt
+config.py
+config.cpython-312.pyc
