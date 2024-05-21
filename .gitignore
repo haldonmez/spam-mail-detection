@@ -2,3 +2,4 @@
 *.txt
 config.py
 config.cpython-312.pyc
+transformer.cpython-312.pyc
