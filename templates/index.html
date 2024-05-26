@@ -8,7 +8,21 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/styles.css') }}">
     </head>
     <body>
-        <h1>Spam mail detection</h1>
+        <div class="container">
+            <header>
+                <h1>Spam Mail Detection</h1>
+            </header>
+            <main>
+                <form id="spamForm">
+                    <div class="form-group">
+                        <label for="emailBody">Email Body</label>
+                        <textarea id="emailBody" name="body" rows="10" required></textarea>
+                    </div>
+                    <button type="submit">Make Prediction</button>
+                </form>
+                <div id="result" class="result hidden"></div>
+            </main>
+        </div>
         <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
     </body> 
 </html>
