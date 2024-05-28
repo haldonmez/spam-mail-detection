@@ -17,8 +17,8 @@ def hello_world():
 # Assuming you have a function `predict_spam` that takes body and returns a boolean
 def predict_spam(body):
     # Load the model from the file
-    lrc = joblib.load('spam_model.pkl')
-    vectorizer = joblib.load('vectorizer.pkl')
+    lrc = joblib.load('model_files\\spam_model.pkl')
+    vectorizer = joblib.load('model_files\\vectorizer.pkl')
 
     nltk.download("stopwords")
 
