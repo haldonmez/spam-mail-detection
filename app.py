@@ -2,6 +2,11 @@ from flask import Flask, render_template, request, jsonify
 import base64
 from PIL import Image
 from io import BytesIO
+import joblib
+import nltk 
+from nltk.stem.porter import PorterStemmer
+from nltk.stem import PorterStemmer
+from nltk.corpus import stopwords
 
 app = Flask(__name__)
 
@@ -11,8 +16,34 @@ def hello_world():
 
 # Assuming you have a function `predict_spam` that takes body and returns a boolean
 def predict_spam(body):
-    # Placeholder for your spam detection logic
-    return True
+    # Load the model from the file
+    lrc = joblib.load('spam_model.pkl')
+    vectorizer = joblib.load('vectorizer.pkl')
+
+    nltk.download("stopwords")
+
+    stemmer = PorterStemmer()
+    corpus = []
+    stopwords_set = set(stopwords.words("english"))
+    stopwords_set.add("subject")
+    stopwords_set.add("hou")
+    stopwords_set.add("ect")
+    stopwords_set.add("enron")
+
+    text = body
+    text = text.split()
+    text = [word for word in text if word.isalpha() and len(word) > 1]
+    text = [stemmer.stem(word) for word in text if word not in stopwords_set]
+    text = " ".join(text)
+    corpus.append(text)
+
+    final_pre = vectorizer.transform(corpus)
+    y_pred = lrc.predict(final_pre)
+
+    if y_pred.item() == 1:
+        return True
+    elif y_pred.item() == 0:
+        return False
 
 @app.route('/predict', methods=['POST'])
 def predict():
