@@ -423,4 +423,4 @@ def predict_spam(body):
 ```
 
 
-Huge Thanks to [JIARUI XU](https://github.com/XavierSpycy) for the inspiration.
+Huge Thanks to [JIARUI XU](https://github.com/XavierSpycy) for the inspiration for the readme architecture.
