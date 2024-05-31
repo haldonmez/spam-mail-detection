@@ -2,6 +2,7 @@
 
 <p align="center">
   <img src="images\\images_readme\\tumblr_na9uijUN3v1ru5h8co1_500.gif">
+  (Source:foxadhd.com)
 </p>
 
 ## :rocket: Quick Start:
@@ -420,3 +421,6 @@ def predict_spam(body):
 ├── README.md
 └── requirements.txt
 ```
+
+
+Huge Thanks to [JIARUI XU](https://github.com/XavierSpycy) for the inspiration.
