@@ -14,7 +14,6 @@ app = Flask(__name__)
 def hello_world():
     return render_template("index.html")
 
-# Assuming you have a function `predict_spam` that takes body and returns a boolean
 def predict_spam(body):
     # Load the model from the file
     lrc = joblib.load('model_files\\spam_model.pkl')
